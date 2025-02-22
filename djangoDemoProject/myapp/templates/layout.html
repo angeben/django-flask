@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>
+            {% block title %}
+                <!--page title-->
+            {% endblock %}
+            | Django
+        </title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}"/>
+    </head>
+    <body>
+        <header>
+            <div id="logo">
+                <!--Django logo-->
+                <img src="{% static 'images/logo.png' %}"/>
+                <h1>Website developed with Django</h1>
+            </div>            
+        </header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="{% url 'index'%}">Home Page</a>
+                </li>
+                <li>
+                    <a href="{% url 'helloWorld'%}">Hello World</a>
+                </li>
+                <li>
+                    <a href="{% url 'sayHi'%}">Greeting Page</a>
+                </li>
+                <li>
+                    <a href="{% url 'quotes'%}">Quotes</a>
+                </li>
+                <li>
+                    <a href="{% url 'contact'%}">Contact</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="bar">
+            <span class="left-corner"></span>
+            <span class="bar-fill"></span>
+            <span class="right-corner"></span>
+        </div>
+        <div id="content">
+            <div class="box">
+            {% block content %}
+                <!--content-->
+            {% endblock %}
+            </div>            
+        </div>
+        <footer>
+            <p>Ángel Benítez Gómez | Github: angeben</p>
+            <p>{% now "d/m/y"%}</p>
+        </footer>
+    </body>
+</html>

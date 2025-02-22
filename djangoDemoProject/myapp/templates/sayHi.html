@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+{{title}}
+{% endblock %}
+
+{% block content %}
+<h1 class="title">{{title}}</h1>
+<h3>Hi 
+    {% if name != '' %}
+        {{name}}!!!
+    {% else %}everyone!!!
+    {% endif %}
+</h3>
+{% endblock%}

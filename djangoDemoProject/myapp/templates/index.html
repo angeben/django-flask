@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Home Page
+{% endblock %}
+
+{% block content %}
+<h1 class="title">Home Page</h1>
+<h3>This is the home page</h3>
+
+<h3>List of tools involved in the project</h3>
+<ul>
+    {% for tool in tools%}
+    <li>{{tool}}</li>
+    {% endfor %}
+</ul>
+
+{% endblock%}
