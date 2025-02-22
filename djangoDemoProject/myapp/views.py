@@ -1,5 +1,6 @@
 from django.shortcuts import redirect, render, HttpResponse
 from myapp.models import Quote
+from django.db.models import Q
 
 # Create your views here.
 
@@ -25,9 +26,12 @@ def sayHi(request, name=""):
         })
     
 def quotes(request):
-    return render(request, 'quotes.html')
+    quotes = Quote.objects.all()
+    return render(request, 'quotes.html',{
+        'quotes': quotes
+    })
 
-def create_quote(request, content, author, origin, public):
+def create_quote2(request, content, author, origin, public):
     quote = Quote(
         content = content,    
         origin = author,
@@ -36,6 +40,24 @@ def create_quote(request, content, author, origin, public):
     )
     quote.save()
     return HttpResponse("Quote created")
+
+def create_quote(request):    
+    return render(request, 'createQuote.html')
+
+def save_quote(request):
+    quote_content = request.POST['quote_content']
+    quote_author = request.POST['quote_author']
+    quote_source = request.POST['quote_source']
+    quote_public = request.POST['quote_public']
+
+    quote = Quote(
+        content = quote_content,    
+        author = quote_author,
+        origin = quote_source,
+        public = quote_public
+    )
+    quote.save()
+    return redirect('quotes')
 
 def get_quote(request, id):
     try:
@@ -54,3 +76,11 @@ def edit_quote(request, id):
     except:
         response = HttpResponse("Quote not found in edit")
     return response
+
+def delete_quote(request, id):
+    try:
+        quote = Quote.objects.get(pk=id)
+        quote.delete()        
+    except:
+        print("There was an error")
+    return redirect('quotes')

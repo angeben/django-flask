@@ -6,4 +6,18 @@ Quotes
 
 {% block content %}
 <h2 class="title">Quotes</h2>
+    
+    <ul>
+        {% for q in quotes%}
+        <li>
+            <h4>"{{q.content}}"</h4>
+            <p>
+                {{q.author}} ({{q.origin}})
+                </br>
+                <a href="{% url 'delete-quote' id=q.id %}">Delete</a>
+            </p>            
+        </li>
+        {% endfor %}
+    </ul>
+    
 {% endblock%}
