@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>{% block title %}{% endblock %} | Flask Demo</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"/>
+    </head>
+    <body>
+        <header>
+            <div id="logo">
+                <h1>Website developed with Flask</h1>
+            </div>            
+        </header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/say-hi/">Greeting Page</a>
+                </li>
+                <li>
+                    <a href="/contact">Contact</a>
+                </li>
+            </ul>
+        </nav> 
+        <div class="bar">
+            <span class="left-corner"></span>
+            <span class="bar-fill"></span>
+            <span class="right-corner"></span>
+        </div>
+        <div id="content">
+            <div class="box">
+            {% block content %}
+            {% endblock %}
+            </div>            
+        </div>
+        <footer>
+            <p>Ángel Benítez Gómez | Github: angeben</p>
+            <p>{{now.day}}/{{now.month}}/{{now.year}}</p>
+        </footer>
+    </body>
+</html>
