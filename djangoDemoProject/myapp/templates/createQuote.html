@@ -5,25 +5,11 @@ Quotes
 {% endblock %}
 
 {% block content %}
-<h2 class="title">Create Quote</h2>
+<h2 class="title">{{ quoteAction }}</h2>
 
-<form action="{% url 'save-quote' %}" method="POST">
+<form action="" method="POST">
     {% csrf_token %}
-    <label for="quote_content">Quote</label>
-    <textarea name="quote_content" placeholder="Introduce the quote here"></textarea>
-    
-    <label for="quote_author">Author</label>
-    <input type="text" name="quote_author" placeholder="Author of the quote"/>
-    
-    <label for="quote_source">Source</label>
-    <input type="text" name="quote_source" placeholder="Source of the quote"/>
-    
-    <label for="quote_public">Public</label>
-    <select name="quote_public">
-        <option value="1">Yes</option>
-        <option value="0">No</option>
-    </select>
-    </br>
+    {{ form }}
     <button type="submit">Create</button>
 </form>
     

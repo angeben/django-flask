@@ -5,8 +5,10 @@ Quotes
 {% endblock %}
 
 {% block content %}
-<h2 class="title">Quotes</h2>
-    
+<div class='flex-container'>
+    <h2 class="flex-column-title">Quotes</h2>
+    <a href="{% url 'create-quote' %}" class='flex-column-button'>Create new quote</a>
+</div>
     <ul>
         {% for q in quotes%}
         <li>
@@ -14,10 +16,12 @@ Quotes
             <p>
                 {{q.author}} ({{q.origin}})
                 </br>
-                <a href="{% url 'delete-quote' id=q.id %}">Delete</a>
+                <div class="quoteActions">
+                    <a href="{% url 'update-quote' id=q.id %}" class='editQuote'>Edit</a>
+                    <a href="{% url 'delete-quote' id=q.id %}" class='deleteQuote'>Delete</a>
+                </div>
             </p>            
         </li>
         {% endfor %}
-    </ul>
-    
+    </ul>  
 {% endblock%}

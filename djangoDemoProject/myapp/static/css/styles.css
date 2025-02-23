@@ -4,16 +4,7 @@
     font-family: sans-serif, Arial, Helvetica;
 }
 
-.box p, .box h2, .box h3, .box ul{
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-.box ul, .box ol{
-    margin-left: 20px;
-    margin-bottom: 10px;
-}
-
+/* Layout structure*/
 body{
     background-color: #f2f2f2;
 }
@@ -25,6 +16,19 @@ header{
     margin: 0px auto;
 }
 
+footer{
+    width: 1250px;
+    background-color: #161024;
+    border: 1px solid #333;
+    color: #d1d4d6;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: 0 px 0px 20px gray;
+}
+
+/* Logo */
 #logo{
     width: 50%;
     height: 130px;
@@ -49,6 +53,7 @@ header{
     color: #2ba977;
 }
 
+/* Navigation bar */
 nav{
     width: 1250px;
     height: 40px;
@@ -111,6 +116,7 @@ nav ul li a:hover{
     float: left;
 }
 
+/* General page content*/
 #content{
     width: 1212px;
     min-height: 500px;
@@ -127,6 +133,16 @@ nav ul li a:hover{
     border: 1px solid #ddd;
     border-radius: 5px;
     margin: 0 auto;
+}
+
+.box p, .box h2, .box h3, .box ul{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.box ul, .box ol{
+    margin-left: 20px;
+    margin-bottom: 10px;
 }
 
 .box form{
@@ -173,14 +189,103 @@ nav ul li a:hover{
     margin-top: 5px;
 }
 
-footer{
-    width: 1250px;
-    background-color: #161024;
-    border: 1px solid #333;
-    color: #d1d4d6;
-    text-align: center;
-    margin: 0 auto;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    box-shadow: 0 px 0px 20px gray;
+.form_input{
+    background-color: rgb(224, 255, 255);
+    text-indent: 5px;
+}
+
+.form_input_area{
+    background-color: rgb(224, 255, 255);
+    padding: 5px;
+}
+
+/* Styles for Quotes page*/
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+  
+.flex-column-title {
+    display: flex;
+    flex-direction: column;
+    color: #444;
+    letter-spacing: 1px;
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.flex-column-button {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    padding-top: 5px;
+    background: #231b36;
+    color: white;
+    transition: 300ms all;
+    text-decoration: none;
+    border: 1px solid #231b36;
+    border-radius: 5px;
+}
+
+.flex-column-button:hover{
+    cursor: pointer;
+    background: #3c2e5b;
+}
+
+.quoteActions{
+    padding: 5px;
+    margin-top: 5px;
+    color: white;
+}
+
+.editQuote{
+    padding: 7px;
+    margin-top: 5px;
+    background: #2ba977;
+    color: white;
+    border: 1px #444;
+    transition: 300ms all;
+    text-decoration: none;
+    font-size: small;
+    border: 1px solid #2ba977;
+    border-radius: 5px;
+}
+.editQuote:hover{
+    cursor: pointer;
+    background: #1f7e58;
+}
+
+.deleteQuote{
+    padding: 7px;
+    margin-top: 5px;
+    background: #c20101;
+    color: white;
+    border: 1px #444;
+    transition: 300ms all;
+    text-decoration: none;
+    font-size: small;
+    border: 1px solid #c20101;
+    border-radius: 5px;
+}
+.deleteQuote:hover{
+    cursor: pointer;
+    background: #970101;
+}
+
+.createQuote{
+    padding: 7px;
+    margin-top: 5px;
+    float: right;
+    background: #c20101;
+    color: white;
+    border: 1px #444;
+    transition: 300ms all;
+    text-decoration: none;
+    font-size: small;
+}
+.createQuote:hover{
+    cursor: pointer;
+    background: #970101;
 }
