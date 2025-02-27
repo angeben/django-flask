@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Quotes
+{% endblock %}
+
+{% block content %}
+<div class='flex-container'>
+    <h2 class="flex-column-title">Quotes</h2>
+    <a href="{% url 'create-quote' %}" class='flex-column-button'>Create new quote</a>
+</div>
+    
+{% for q in quotes%}
+    <article class="quote-item">        
+        {% if q.image != 'null' and q.image.url|length >= 1 %}
+            <div class="image">
+                <img src="{{q.image.url}}"/>
+            </div>
+        {% endif %}
+        <div class="data">                
+            <p>
+                <h2>"{{q.content}}"</h2>
+                {{q.author}} ({{q.origin}})
+                </br>
+                <div class="quoteActions">
+                    <a href="{% url 'update-quote' id=q.id %}" class='editQuote'>Edit</a>
+                    <a href="{% url 'delete-quote' id=q.id %}" class='deleteQuote'>Delete</a>
+                </div>
+            </p> 
+        </div>
+        <div class="clearfix"></div>         
+    </article>
+    {% endfor %}
+{% endblock%}

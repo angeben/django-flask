@@ -1,0 +1,359 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif, Arial, Helvetica;
+}
+
+/* Layout structure*/
+body{
+    background-color: #f2f2f2;
+}
+
+header{
+    width: 1212px;
+    height: 140px;   
+    background-color: #161024;
+    margin: 0px auto;
+}
+
+footer{
+    width: 1250px;
+    background-color: #161024;
+    border: 1px solid #333;
+    color: #d1d4d6;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: 0 px 0px 20px gray;
+}
+
+/* Logo */
+#logo{
+    width: 50%;
+    height: 130px;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+#logo img{
+    display: block;
+    width: 60px;
+    float: left;
+    margin-top: 20px;
+}
+
+#logo h1{
+    display: block;
+    letter-spacing: 2px;
+    font-weight: 100;
+    margin-top: 35px;
+    margin-left: 20px;
+    float: left;
+    color: #2ba977;
+}
+
+/* Navigation bar */
+nav{
+    width: 1250px;
+    height: 40px;
+    margin: 0 auto;
+    background-color: #1b1e1f;
+    border: 1px solid #333333;
+    box-shadow: 0px 22px 22px gray;
+    font-size: 15px;
+}
+
+nav > ul{
+    list-style: none;
+    text-decoration: none;
+}
+
+nav > ul > li{
+    line-height: 40px;
+    float: left;
+}
+
+nav > ul > li > a{
+    text-decoration: none;
+    display: block;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #d1d4d6;
+}
+
+nav > ul > li > a:hover{
+    background: #2ba977;
+    box-shadow: 0px 0px 5px #333333 inset;
+    color: white;
+    transition: all 300ms;
+}
+
+nav > ul > li > ul{
+    display: none;
+    position: absolute;
+    color: white;
+    text-align: left;
+    width: 160px;
+    box-shadow: 0px 2px 2px gray;
+}
+
+nav > ul > li:hover > ul{
+    display: block;
+    color: black;
+    margin: 0px;
+    list-style: none;
+}
+
+nav > ul > li:hover > ul > li{
+    background: #f2f1f0;
+    border-bottom: 1px solid #d6d6d6;
+    padding: 8px;
+    line-height: 25px;
+    font-size: 13px;
+    transition: all 300ms;
+}
+
+nav > ul > li:hover > ul > li a{    
+    text-decoration: none;
+    color: #666;
+    transition: all 300ms;
+}
+
+nav > ul > li:hover > ul > li:hover{
+    background-color: #2ba977;
+}
+
+nav > ul > li:hover > ul > li:hover a{
+    display: block;
+    color: white;
+}
+
+.bar{
+    width: 1250px;
+    margin: 0 auto;
+}
+
+.left-corner{
+    display: block;
+    border-left: 20px solid transparent;
+    border-top: 10px solid #231b36;
+    float: left;
+}
+
+.right-corner{
+    display: block;
+    border-right: 20px solid transparent;
+    border-top: 10px solid #231b36;
+    float: right;
+}
+
+.bar-fill{
+    display: block;
+    width: 1210px;
+    background: #231b36;
+    height: 10px;
+    float: left;
+}
+
+/* General page content*/
+#content{
+    width: 1212px;
+    min-height: 500px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    margin-top: 40px;
+}
+
+.box{
+    background: white;
+    width: 95%;
+    min-height: 500px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+.box p, .box h2, .box h3, .box ul{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.box ul, .box ol{
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.box form{
+    width: 50%;
+}
+
+.box form input, .box form label{
+    display: block;
+    padding: 5px;
+    padding-left: 0px;
+}
+
+.box form input[type="text"],
+.box form textarea, .box form select{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.box form select{
+    width: 100px;
+    padding: 5px;
+}
+
+.box form button{
+    padding: 10px;
+    margin-top: 5px;
+    width: 15%;
+    background: #2ba977;
+    color: white;
+    border: 1px solid #444;
+    transition: 300ms all;
+}
+
+.box form button:hover{
+    cursor: pointer;
+    background: #1f7e58;
+}
+
+.title{
+    color: #444;
+    letter-spacing: 1px;
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.content{
+    line-height: 10px;
+}
+
+.form_input{
+    background-color: rgb(224, 255, 255);
+    text-indent: 5px;
+}
+
+.form_input_area{
+    background-color: rgb(224, 255, 255);
+    padding: 5px;
+}
+
+/* Styles for Quotes page*/
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+  
+.flex-column-title {
+    display: flex;
+    flex-direction: column;
+    color: #444;
+    letter-spacing: 1px;
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.flex-column-button {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    padding-top: 5px;
+    background: #231b36;
+    color: white;
+    transition: 300ms all;
+    text-decoration: none;
+    border: 1px solid #231b36;
+    border-radius: 5px;
+}
+
+.flex-column-button:hover{
+    cursor: pointer;
+    background: #3c2e5b;
+}
+
+.quoteActions{
+    padding: 5px;
+    margin-top: 5px;
+    color: white;
+}
+
+/* Quote elemets */
+.quote-item{
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.quote-item .data{
+    float: left;
+    padding: 15px;
+}
+
+.quote-item .image{
+    max-width: 400px;
+    height: 200px;
+    float: left;
+    overflow: hidden;
+}
+
+.quote-item .image img{
+    height: 200px;
+}
+
+.quote-item .image img{
+    float: left;
+    padding: 15px;
+}
+
+.editQuote{
+    display: block;
+    padding: 10px;
+    width: 50px;
+    text-align: center;
+    margin-top: 5px;
+    background: #2ba977;
+    color: white;
+    border: 1px #444;
+    transition: 300ms all;
+    text-decoration: none;
+    font-size: small;
+    border: 1px solid #2ba977;
+    border-radius: 5px;
+}
+.editQuote:hover{
+    cursor: pointer;
+    background: #1f7e58;
+}
+
+.deleteQuote{
+    display: block;
+    padding: 10px;
+    width: 50px;
+    text-align: center;
+    margin-top: 5px;
+    background: #c20101;
+    color: white;
+    border: 1px #444;
+    transition: 300ms all;
+    text-decoration: none;
+    font-size: small;
+    border: 1px solid #c20101;
+    border-radius: 5px;
+}
+.deleteQuote:hover{
+    cursor: pointer;
+    background: #970101;
+}
+
+.clearfix{
+    clear: both;
+    float: none;
+}
