@@ -5,10 +5,7 @@ Quotes
 {% endblock %}
 
 {% block content %}
-<div class='flex-container'>
-    <h2 class="flex-column-title">Quotes</h2>
-    <a href="{% url 'create-quote' %}" class='flex-column-button'>Create new quote</a>
-</div>
+<h2 class="title">Quotes</h2>
     
 {% for q in quotes%}
     <article class="quote-item">        

@@ -227,6 +227,8 @@ nav > ul > li:hover > ul > li:hover a{
     color: white;
     text-align: center;
     margin-bottom: 10px;
+    border-radius: 5px;
+    width: 50%;
 }
 
 .title{
@@ -252,40 +254,6 @@ nav > ul > li:hover > ul > li:hover a{
 }
 
 /* Styles for Quotes page*/
-.flex-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-  
-.flex-column-title {
-    display: flex;
-    flex-direction: column;
-    color: #444;
-    letter-spacing: 1px;
-    font-size: 30px;
-    margin-bottom: 10px;
-    margin-top: 5px;
-}
-
-.flex-column-button {
-    display: flex;
-    flex-direction: column;
-    padding: 5px;
-    padding-top: 5px;
-    background: #231b36;
-    color: white;
-    transition: 300ms all;
-    text-decoration: none;
-    border: 1px solid #231b36;
-    border-radius: 5px;
-}
-
-.flex-column-button:hover{
-    cursor: pointer;
-    background: #3c2e5b;
-}
-
 .quoteActions{
     padding: 5px;
     margin-top: 5px;
@@ -364,4 +332,28 @@ nav > ul > li:hover > ul > li:hover a{
 .clearfix{
     clear: both;
     float: none;
+}
+
+/* Pagination */
+.pagination{
+    display: block;
+}
+
+.pagination a{
+    padding: 5px;
+    background-color: #1b1e1f;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    transition: all 300ms;
+}
+
+.pagination a:hover{
+    color: #3feea8;
+}
+
+.current{
+    color: #2f2f2f;
+    margin-left: 5px;
+    margin-right: 5px;
 }
