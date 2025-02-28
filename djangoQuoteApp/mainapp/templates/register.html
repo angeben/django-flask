@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+<h1 class='title'>{{ title }}</h1>
+{{ register_form.errors }}
+<form method="post" action="">
+    {% csrf_token %}
+    {% for field in register_form %}
+        <label>{{ field.label }} </label>
+        {{ field }}
+    {% endfor %}
+    </br>
+    <button type="submit">Register</button>
+</form>
+{% endblock%}

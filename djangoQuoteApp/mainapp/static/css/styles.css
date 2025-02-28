@@ -221,6 +221,14 @@ nav > ul > li:hover > ul > li:hover a{
     background: #1f7e58;
 }
 
+.message, .alert, .alert-warning{
+    padding: 20px;
+    background: #972824;
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
 .title{
     color: #444;
     letter-spacing: 1px;

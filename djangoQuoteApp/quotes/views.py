@@ -1,7 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import redirect, render, get_object_or_404
 from quotes.forms import QuoteForm
-from quotes.models import Quote, Category
+from quotes.models import Quote
+from django.core.paginator import Paginator
 
 # Create your views here.
 def quotes(request, category_id=0):
@@ -9,8 +10,13 @@ def quotes(request, category_id=0):
         quotes = Quote.objects.filter(public=True, categories=category_id)
     else:
         quotes = Quote.objects.filter(public=True)
+
+    paginator = Paginator(quotes, 1)
+    page = request.GET.get('page')
+    page_quotes = paginator.get_page(page)
+
     return render(request, 'quotes.html',{
-        'quotes': quotes
+        'quotes': page_quotes
     })
 
 def create_quote(request):

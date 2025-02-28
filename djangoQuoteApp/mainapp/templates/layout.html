@@ -26,6 +26,7 @@
                     <a href="{% url 'page' page.2 %}">{{page.1}}</a>
                 </li>
                 {% endfor %}
+                {% if user.username %}
                 <li>
                     <a href="{% url 'quotes'%}">Quotes</a>
                 </li>
@@ -39,6 +40,20 @@
                         {% endfor %}
                     </ul>
                 </li>
+                <li>
+                    <a href="{% url 'create-quote'%}">Add Quote</a>
+                </li>
+                <li>
+                    <a href="{% url 'logout' %}">Logout</a>
+                </li>
+                {% else %}
+                <li>
+                    <a href="{% url 'register' %}">Register</a>
+                </li>
+                <li>
+                    <a href="{% url 'login' %}">Log In</a>
+                </li>
+                {% endif %}
             </ul>
         </nav>
         <div class="bar">
