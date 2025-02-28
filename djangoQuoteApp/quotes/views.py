@@ -25,7 +25,7 @@ def quotes(request, category_id=0):
 @login_required(login_url='login')
 def create_quote(request):
     if request.method == 'POST':
-        form = QuoteForm(request.POST)
+        form = QuoteForm(request.POST, request.FILES)
         # Validation and data management
         if form.is_valid():
             form_data = form.cleaned_data
@@ -33,12 +33,14 @@ def create_quote(request):
             quote_author = request.POST['author']
             quote_source = form_data['origin']
             quote_public = form_data['public']
+            quote_image = form_data['image']
             quote = Quote(
                 content = quote_content,    
                 author = quote_author,
                 origin = quote_source,
                 public = quote_public,
-                user = request.user
+                user = request.user,
+                image = quote_image
             )
             quote.save()
             return redirect('quotes')

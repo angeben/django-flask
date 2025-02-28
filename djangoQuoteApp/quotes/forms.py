@@ -40,3 +40,5 @@ class QuoteForm(forms.Form):
         label = "Public",
         choices = public_options
     )
+
+    image = forms.ImageField(required=False)

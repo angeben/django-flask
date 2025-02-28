@@ -25,8 +25,12 @@ SECRET_KEY = 'django-insecure-$i@is=ym(2d27br^ma6!+qszay82^-(r_8to&-@^4dg0(#67&c
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
 ALLOWED_HOSTS = []
+
+''' To test 404 error page
+DEBUG = False
+ALLOWED_HOSTS = ['*']
+'''
 
 
 # Application definition
@@ -60,7 +64,7 @@ ROOT_URLCONF = 'djangoQuoteApp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
