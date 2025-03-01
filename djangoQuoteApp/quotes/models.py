@@ -25,7 +25,7 @@ class Quote(models.Model):
     public = models.BooleanField()
     image = models.ImageField(default='null', upload_to='quotes')
     user = models.ForeignKey(User, editable=False, on_delete=models.CASCADE)
-    categories = models.ManyToManyField(Category, null=True, blank=True)
+    categories = models.ManyToManyField(Category, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
